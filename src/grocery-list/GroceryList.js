@@ -3,12 +3,12 @@ import Item from './Item'
 
 //presentational component
 //item in .map is passed from app.js return function
-const GroceryList = ({items, name, todoClick}) => (
+const GroceryList = ({items, name, itemClick}) => (
   <div>
     <h2>{name}</h2>
     <ul>
       {
-        items.map(item => <Item key={item.id} {...item} itemClick={itemClick} />
+        items.map(item => <Item key={item.id} {...item} itemClick={itemClick} />)
       }
     </ul>
   </div>
