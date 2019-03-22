@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GroceryList from './grocery-list/GroceryList';
 import ItemForm from './grocery-list/ItemForm';
-import { Container } from 'semantic-ui-react';
+import { Container, Menu, Icon } from 'semantic-ui-react';
 
 class App extends Component {
 
@@ -43,8 +43,20 @@ class App extends Component {
     const { items, } = this.state
     return (
       <Container>
-        <ItemForm addItem={this.addItem} />
+      <Menu inverted>
+        <Menu.Item>Home</Menu.Item>
+        <Menu.Item>View Cart</Menu.Item>
+        <Menu.Item><Icon name="shopping cart" />Checkout</Menu.Item>
+      </Menu>
+     
+     
         <GroceryList name="grocery list" items={items} itemClick={this.itemClick} />
+        <br></br>
+        <br></br>
+        <h2>Add an Item:</h2>
+        <br></br>
+        <br></br>
+        <ItemForm addItem={this.addItem} />
       </Container>
     );
   }
