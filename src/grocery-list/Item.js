@@ -18,7 +18,7 @@ const Item = ({ id, name, price, complete, itemClick }) => (
   onClick={ () => itemClick(id)}
   >
 
-    {name}
+    {name}:
     {price}
   
     </li>
