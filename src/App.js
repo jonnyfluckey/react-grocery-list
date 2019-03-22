@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GroceryList from './grocery-list/GroceryList'
-
+import ItemForm from './grocery-list/ItemForm';
 
 class App extends Component {
 
@@ -12,17 +12,37 @@ class App extends Component {
     ]
   }
 
-  itemClick = () => {
+  addItem = (itemData) => {
+  //  const { items } = this.state
+    let item = { id: this.getUniqId(), ...itemData }
+    this.setState({ items: [item, ...this.state.items] })
+  }
 
+  getUniqId = () => {
+    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1)
+  }
 
+  itemClick = (id) => {
+    const { items } = this.state
+    this.setState({
+      items: items.map( item => {
+        if (item.id === id) {
+          return {
+            ...item,
+            complete: !item.complete
+          }
+        }
+      })
+    })
   }
 
 
   render() {
+    const { items, } = this.state
     return (
       <div>
+        <ItemForm addItem={this.addItem} />
         <GroceryList name="grocery list" items={this.state.items} itemClick={this.itemClick} />
-        
       </div>
     );
   }
