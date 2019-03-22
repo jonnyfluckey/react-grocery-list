@@ -7,13 +7,13 @@ class App extends Component {
   state = {
     items: [
       { id: 1, name: "apples", price: 1.00, complete: false },
-      { id: 1, name: "bananas", price: 1.25, complete: false },
-      { id: 1, name: "lettuce", price: 1.50, complete: false }
+      { id: 2, name: "bananas", price: 1.25, complete: false },
+      { id: 3, name: "lettuce", price: 1.50, complete: false }
     ]
   }
 
   addItem = (itemData) => {
-  //  const { items } = this.state
+      //  const { items } = this.state
     let item = { id: this.getUniqId(), ...itemData }
     this.setState({ items: [item, ...this.state.items] })
   }
@@ -32,6 +32,7 @@ class App extends Component {
             complete: !item.complete
           }
         }
+        return item
       })
     })
   }
@@ -41,8 +42,8 @@ class App extends Component {
     const { items, } = this.state
     return (
       <div>
-        <ItemForm addItem={this.addItem}
-        <GroceryList name="grocery list" items={this.state.items} itemClick={this.itemClick} />
+        <ItemForm addItem={this.addItem} />
+        <GroceryList name="grocery list" items={items} itemClick={this.itemClick} />
       </div>
     );
   }
