@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Button, Icon} from 'semantic-ui-react';
 
 // Logical component
 
@@ -29,6 +30,7 @@ render() {
         name="name"
         onChange={this.handleChange}
       />
+      <br></br>
       <input
         required
         placeholder="price"
@@ -36,7 +38,14 @@ render() {
         name="price"
         onChange={this.handleChange}
       />
-      <input type="submit" value="Submit"></input>
+      <br></br>
+      <br></br>
+      <Button type="submit" animated>
+      <Button.Content visible>Submit</Button.Content>
+      <Button.Content hidden>
+        <Icon name='arrow right' />
+        </Button.Content>
+      </Button>
     </form>
   )
 }

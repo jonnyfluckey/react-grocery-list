@@ -1,4 +1,5 @@
 import React from 'react'
+import {List, Card} from 'semantic-ui-react'
 
 //presentational component
 
@@ -13,15 +14,24 @@ const styles = {
 }
 
 const Item = ({ id, name, price, complete, itemClick }) => (
-  <li
-  style={complete ? {...styles.item, ...styles.complete} : styles.item }
-  onClick={ () => itemClick(id)}
-  >
+  // <List.Item
+  // style={complete ? {...styles.item, ...styles.complete} : styles.item }
+  // onClick={ () => itemClick(id)}
+  // >
+  //   <List.Icon name="hand point right outline" />
+  //   <List.Content>
+  //   {name}:
+  //   ${price}
+  //   </List.Content>
+  //   </List.Item>
 
-    {name}:
-    {price}
-  
-    </li>
+  <Card>
+    <Card.Content>
+      <Card.Header>{name}</Card.Header>
+      <Card.Meta>${price}</Card.Meta>
+    </Card.Content>
+
+  </Card>
 
 
 )
