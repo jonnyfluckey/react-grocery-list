@@ -41,7 +41,7 @@ class App extends Component {
     const { items, } = this.state
     return (
       <div>
-        <ItemForm addItem={this.addItem} />
+        <ItemForm addItem={this.addItem}
         <GroceryList name="grocery list" items={this.state.items} itemClick={this.itemClick} />
       </div>
     );
