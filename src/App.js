@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GroceryList from './grocery-list/GroceryList'
+import ItemForm from './grocery-list/ItemForm'
 
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <ItemForm />
         <GroceryList name="grocery list" items={this.state.items} itemClick={this.itemClick} />
         
       </div>
