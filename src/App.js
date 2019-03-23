@@ -58,7 +58,7 @@ class App extends Component {
       </Menu>
 
 
-        <GroceryList name="grocery list"
+        <GroceryList name="Grocery List"
           items={items}
           itemClick={this.itemClick}
           remove={this.removeItem} />

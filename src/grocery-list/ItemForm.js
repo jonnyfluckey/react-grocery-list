@@ -40,7 +40,7 @@ render() {
       />
       <br></br>
       <br></br>
-      <Button type="submit" animated>
+      <Button type="submit" animated color='blue'>
       <Button.Content visible>Submit</Button.Content>
       <Button.Content hidden>
         <Icon name='arrow right' />
