@@ -38,6 +38,14 @@ class App extends Component {
     })
   }
 
+  removeItem = (id) => {
+    const items = this.state.items.filter( item => {
+      if (item.id !== id)
+        return item
+    })
+      this.setState({ items: [...items], })
+  }
+
 
   render() {
     const { items, } = this.state
@@ -48,9 +56,12 @@ class App extends Component {
         <Menu.Item>View Cart</Menu.Item>
         <Menu.Item><Icon name="shopping cart" />Checkout</Menu.Item>
       </Menu>
-     
-     
-        <GroceryList name="grocery list" items={items} itemClick={this.itemClick} />
+
+
+        <GroceryList name="grocery list"
+          items={items}
+          itemClick={this.itemClick}
+          remove={this.removeItem} />
         <br></br>
         <br></br>
         <h2>Add an Item:</h2>
